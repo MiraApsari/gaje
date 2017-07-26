@@ -26,6 +26,7 @@ wget -O /etc/nginx/conf.d/vps.conf "https://raw.githubusercontent.com/Aris976543
 sed -i 's/cgi.fix_pathinfo=1/cgi.fix_pathinfo=0/g' /etc/php5/fpm/php.ini
 sed -i 's/listen = \/var\/run\/php5-fpm.sock/listen = 127.0.0.1:9000/g' /etc/php5/fpm/pool.d/www.conf
 ```
+```
 useradd -m vps && mkdir -p /home/vps/public_html
 rm /home/vps/public_html/index.html && echo "<?php phpinfo() ?>" > /home/vps/public_html/info.php
 chown -R www-data:www-data /home/vps/public_html && chmod -R g+rw /home/vps/public_html
