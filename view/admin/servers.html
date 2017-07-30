@@ -43,11 +43,11 @@
                         <a href="{{ @URI.'/'.@server->id }}/account" class="btn btn-warning"><i class="fa fa-group fa-fw"></i> Check User</a><br>
 						</div>
 						                    <div class="panel-footer text-center">
-						<a href=" https://{{ @server->config }}" class="btn btn-success"><i class="fa fa-download fa-fw"></i> VPN Config</a>
+						<a href=" http://{{ @server->config }}" class="btn btn-success"><i class="fa fa-download fa-fw"></i> VPN Config</a>
                     </div>
 					
 						                    <div class="panel-footer text-center">
-						<a  href="https://{{ @server->host }}:10000" class="btn btn-warning"><i class="fa fa-gears fa-fw"></i> Manage Webmin</a>
+						<a  href="http://{{ @server->host }}:10000" class="btn btn-warning"><i class="fa fa-gears fa-fw"></i> Manage Webmin</a>
                     </div>
 					<div class="panel-footer text-center">
 							<check if="{{ @server->id }}">
