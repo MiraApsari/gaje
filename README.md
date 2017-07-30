@@ -1,5 +1,6 @@
 #This Tutorial
 ```
+apt-get install ca-certificates
 apt-get update && apt-get -y install mysql-server
 ```
 ```
