@@ -1,7 +1,7 @@
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+07:00";
 CREATE TABLE IF NOT EXISTS `server` (
-  `id` int(10) NOT NULL AUTO_INCREMENT,
+    `id` int(10) NOT NULL AUTO_INCREMENT,
   `servername` varchar(255) NOT NULL,
   `country` varchar(30) NOT NULL,
   `host` varchar(255) NOT NULL,
@@ -10,6 +10,7 @@ CREATE TABLE IF NOT EXISTS `server` (
   `dropbear`  varchar(255) NOT NULL,
   `isp`  varchar(255) NOT NULL,
   `status`  varchar(255) NOT NULL,
+  `config`  varchar(255) NOT NULL,
   `price` int(10) NOT NULL,
   `root_pass` varchar(500) NOT NULL,
   `active` tinyint(1) NOT NULL DEFAULT '1',
