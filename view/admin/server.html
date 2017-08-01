@@ -42,17 +42,23 @@
                             <label>IP / Host</label>
                             <input class="form-control" placeholder="192.168.1.1 atau www.example-server.com" name="host" type="text" value="{{ @server->host }}" required>
                         </div>
-					  <div class="form-group">
-                            <label>Port Squid</label>
-                            <input class="form-control" placeholder="8080 , 8000 ,3128 , 2017" name="squid" type="text" value="{{ @server->squid }}" required>
-                        </div>
-					 <div class="form-group">
-                            <label>Port Dropbear</label>
-                            <input class="form-control" placeholder="80 , 143 , 109 , 110 " name="dropbear" type="text" value="{{ @server->dropbear }}" required>
-                        </div>
-						 <div class="form-group">
-                            <label>Port OpenSSH</label>
-                            <input class="form-control" placeholder="22 , 443 " name="openssh type="text" value="{{ @server->openssh }}" required>
+						<div class="form-group">
+                            <table class="table" style="border-width: 0;">
+                                    <tbody><tr><th style="border-width: 0;">Port OpenSSH</th>
+                                    <th style="border-width: 0;">Port Dropbear</th>
+                                    <th style="border-width: 0;">Port Squid</th>
+                            </tr><tr>
+                            <td style="border-width: 0;">
+                            <input class="form-control" placeholder="Port OpenSSH" name="openssh" type="text" value="{{ @server->openssh }}" required="">
+                            </td>
+                            <td style="border-width: 0;">
+			    <input class="form-control" placeholder="Port Dropbear" name="dropbear" type="text" value="{{ @server->dropbear }}" required="">
+			    </td>
+			    <td style="border-width: 0;">
+                            <input class="form-control" placeholder="Port Squid" name="squid" type="text" value="{{ @server->squid }}" required="">
+                            </td>
+                            </tr>
+                            </tbody></table>
                         </div>
                         <div class="form-group">
                             <label>Harga Sewa / Bulan</label>
@@ -67,8 +73,13 @@
                         </div>
 						<div class="form-group">
                             <label>Status Server</label>
-                            <input class="form-control" placeholder="On , Off , Maintenance" name="status" type="text" value="{{ @server->status }}" required>
-                        </div>
+						<select name="status" value="{{ @server->status }}" required>
+  <option><font color="red"> ON</font></option>
+  <option><font color="green"> OFF</font></option>
+  <option><font color="green"> MAINTENANCE</font></option>
+  
+</select>
+</div>
 						<div class="form-group">
                             <label>Ovpn Config</label>
                             <input class="form-control" placeholder="serverdo:81/client.tar" name="config" type="text" value="{{ @server->config }}" required>
