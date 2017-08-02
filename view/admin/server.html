@@ -49,13 +49,13 @@
                                     <th style="border-width: 0;">Port Squid</th>
                             </tr><tr>
                             <td style="border-width: 0;">
-                            <input class="form-control" placeholder="Port OpenSSH" name="openssh" type="text" value="{{ @server->openssh }}" required="">
+                            <input class="form-control" placeholder="22 , 443 , 109 , 110" name="openssh" type="number" value="{{ @server->openssh }}" required="">
                             </td>
                             <td style="border-width: 0;">
-			    <input class="form-control" placeholder="Port Dropbear" name="dropbear" type="text" value="{{ @server->dropbear }}" required="">
+			    <input class="form-control" placeholder="80 , 143 " name="dropbear" type="number" value="{{ @server->dropbear }}" required="">
 			    </td>
 			    <td style="border-width: 0;">
-                            <input class="form-control" placeholder="Port Squid" name="squid" type="text" value="{{ @server->squid }}" required="">
+                            <input class="form-control" placeholder="3128 , 8000 ,8080" name="squid" type="number" value="{{ @server->squid }}" required="">
                             </td>
                             </tr>
                             </tbody></table>
@@ -74,9 +74,9 @@
 						<div class="form-group">
                             <label>Status Server</label>
 						<select name="status" value="{{ @server->status }}" required>
-  <option><font color="red"> ON</font></option>
-  <option><font color="green"> OFF</font></option>
-  <option><font color="green"> MAINTENANCE</font></option>
+  <option><font face color="red"> ON</font></option>
+  <option><font face color="green"> OFF</font></option>
+  <option><font face color="green"> MAINTENANCE</font></option>
   
 </select>
 </div>
