@@ -17,12 +17,45 @@
             </div>
         </check>
         <repeat group="{{ @servers }}" value="{{ @server }}">
-            <div class="col-sm-6 col-md-4 col-lg-3">
-                <div class="panel panel-default">
+            <div class="col-sm-6 col-md-5 col-lg-4">
+                <div class="panel panel-primary">
                     <div class="panel-heading">
-                        <b>{{ @server->servername }}</b></i>
-						 
-						<span class="pull-right">
+					<center><font size=5>
+					<b class="fa fa-linux fa-fw"></b><br></font>
+					<font size=3>
+                        <b>{{ @server->servername }}</b></i><br>
+</font><font size=2>
+						Rp {{ @server->price }}
+						 </font>
+						 </center>
+
+					 </div>
+                    
+                    <table class="table">
+					 <tr>
+					 
+                            <td>Status</td><td>{{ @server->status }}</td>
+                        </tr>
+                        <tr>
+                            <td>Lokasi</td><td>{{ @server->country }}</td>
+                        </tr>
+						    <tr>
+                            <td>ISP</td><td>{{ @server->isp }}</td>
+                        </tr>
+                        <tr>
+                            <td>Host</td><td>{{ @server->host }}</td>
+                        </tr>
+                        	
+                    </table>
+					
+                    <div class="panel-footer text-center">
+                        <a href="{{ @URI.'/'.@server->id }}" class="btn btn-danger"><i class="fa fa-edit fa-fw"></i> Edit</a>
+                        <a href="{{ @URI.'/'.@server->id }}/account" class="btn btn-primary"><i class="fa fa-group fa-fw"></i> Check User</a><br>
+						</div>
+						                    <div class="panel-footer text-center">
+						<a href=" http://{{ @server->config }}" class="btn btn-success" target="{{ @URI.'/'}}"><i class="fa fa-download fa-fw"></i> VPN Config</a>
+						<a  href="http://{{ @server->host }}:10000" class="btn btn-warning" target="_blank"/><i class="fa fa-gears fa-fw"></i> Manage Webmin</a>
+							<center>	
 							<check if="{{ @server->id }}">
                             <check if="{{ @server->active==1 }}">
 							  <true>
@@ -35,34 +68,10 @@
 					</false>
 					</check>
 					 <a  href="{{ @URI }}/{{ @server->id }}/delete"> <b class="fa fa-trash"> </b> </a>
-					 </span>
-					 </div>
-                    
-                    <table class="table">
-					 <tr>
-                            <td>Status</td><td>{{ @server->status }}</td>
-                        </tr>
-                        <tr>
-                            <td>Lokasi</td><td>{{ @server->country }}</td>
-                        </tr>
-						    <tr>
-                            <td>ISP</td><td>{{ @server->isp }}</td>
-                        </tr>
-                        <tr>
-                            <td>Host</td><td>{{ @server->host }}</td>
-                        </tr>
-                        <tr>
-                            <td>Harga</td><td>{{ @server->price }}</td>
-                    </table>
+				</center>
 					
-                    <div class="panel-footer text-center">
-                        <a href="{{ @URI.'/'.@server->id }}" class="btn btn-danger"><i class="fa fa-edit fa-fw"></i> Edit</a>
-                        <a href="{{ @URI.'/'.@server->id }}/account" class="btn btn-primary"><i class="fa fa-group fa-fw"></i> Check User</a><br>
-						</div>
-						                    <div class="panel-footer text-center">
-						<a href=" http://{{ @server->config }}" class="btn btn-success"><i class="fa fa-download fa-fw"></i> VPN Config</a>
-						<a  href="http://{{ @server->host }}:10000" class="btn btn-warning"><i class="fa fa-gears fa-fw"></i> Manage Webmin</a>
                     </div>
+					
 					
                 </div>
             </div>
